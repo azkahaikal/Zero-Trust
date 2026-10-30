@@ -1,0 +1,26 @@
+{
+  "name": "sistem-nilai-zerotrust",
+  "version": "1.0.0",
+  "description": "Sistem Nilai dengan arsitektur Zero Trust: API Gateway (PEP) + Policy Engine, Service Nilai, Service Transkrip",
+  "private": true,
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "setup": "node scripts/setup.js",
+    "seed": "node scripts/setup.js --reset",
+    "start": "node scripts/start-all.js",
+    "start:gateway": "node gateway/index.js",
+    "start:nilai": "node service-nilai/index.js",
+    "start:transkrip": "node service-transkrip/index.js",
+    "audit": "node scripts/audit.js",
+    "test": "node tests/e2e.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^13.0.3",
+    "express": "^4.21.2",
+    "http-proxy-middleware": "^3.0.5",
+    "jsonwebtoken": "^9.0.2"
+  }
+}
